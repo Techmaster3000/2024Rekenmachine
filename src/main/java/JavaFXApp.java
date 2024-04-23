@@ -37,8 +37,7 @@ public class JavaFXApp extends Application {
     }
 
     protected int computeMultiply (int number1, int number2) {
-
-        MultiplyComputer computeMultiply = new MultiplyComputer();
+        MultiplyComputation computeMultiply = new MultiplyComputation();
         return computeMultiply.compute(number1, number2);
     }
 
