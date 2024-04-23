@@ -24,7 +24,6 @@ public class JavaFXApp extends Application {
     private static final String PLUS = "+";
     private static final String MULTIPLY = "*";
     private static final String DIVIDE = "/";
-
     private static final String SUBTRACT = "-";
 
     private int getNumberFromTextField (TextField textField) {
@@ -42,13 +41,13 @@ public class JavaFXApp extends Application {
     }
 
     protected int computeDivide (int number1, int number2) {
-        DivideComputer computeDivide = new DivideComputer();
+        DivideComputation computeDivide = new DivideComputation();
         return computeDivide.compute(number1, number2);
     }
 
     protected int computeSubtract (int number1, int number2) {
-        ComputeSubtract computeSubtract = new ComputeSubtract();
-        return computeSubtract.compute(number1, number2);
+        SubtractComputation subtractComputation = new SubtractComputation();
+        return subtractComputation.compute(number1, number2);
     }
 
     private void compute (String operator) {
@@ -158,7 +157,8 @@ public class JavaFXApp extends Application {
         addButton (PLUS, 160, 10, 105);
         addButton (MULTIPLY, 160, 170, 105);
         addButton (DIVIDE, 160, 330, 105);
-        txtResult = addTextField ("Hier wordt het resultaat getoond...", false, 480, 10, 155);
+        addButton (SUBTRACT, 160, 490, 105);
+        txtResult = addTextField ("Hier wordt het resultaat getoond...", false, 620, 10, 150);
         txtResult.setEditable (false);
 
         /*
