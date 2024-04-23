@@ -36,13 +36,11 @@ public class JavaFXApp extends Application {
     }
 
     protected int computeMultiply (int number1, int number2) {
-
         MultiplyComputation computeMultiply = new MultiplyComputation();
         return computeMultiply.compute(number1, number2);
     }
 
     protected int computeDivide (int number1, int number2) {
-
         DivideComputation computeDivide = new DivideComputation();
         return computeDivide.compute(number1, number2);
     }
