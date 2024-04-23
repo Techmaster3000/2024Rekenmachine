@@ -42,8 +42,14 @@ public class JavaFXApp extends Application {
     }
 
     protected int computeDivide (int number1, int number2) {
-        DivideComputation divideComputation = new DivideComputation();
-        return divideComputation.compute(number1, number2);
+
+        DivideComputer computeDivide = new DivideComputer();
+        return computeDivide.compute(number1, number2);
+    }
+
+    protected int computeSubtract (int number1, int number2) {
+        ComputeSubtract computeSubtract = new ComputeSubtract();
+        return computeSubtract.compute(number1, number2);
     }
 
     private void compute (String operator) {
@@ -60,10 +66,10 @@ public class JavaFXApp extends Application {
                 result = computeMultiply (number1, number2);
                 break;
             case DIVIDE:
-                result = computeDivide(number1, number2);
+                result = computeDivide (number1, number2);
                 break;
-            case SUBTRACT:
-                result = 0;//computeSubtract(number1, number2);
+            case SUBSTRACT:
+                result = computeSubtract(number1, number2);
                 break;
             default:
                 result = 0;
