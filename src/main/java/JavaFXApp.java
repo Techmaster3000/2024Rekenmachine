@@ -24,8 +24,7 @@ public class JavaFXApp extends Application {
     private static final String PLUS = "+";
     private static final String MULTIPLY = "*";
     private static final String DIVIDE = "/";
-
-    private static final String SUBSTRACT = "-";
+    private static final String SUBTRACT = "-";
 
     private int getNumberFromTextField (TextField textField) {
         return Integer.parseInt (textField.getText ());
@@ -38,13 +37,13 @@ public class JavaFXApp extends Application {
 
     protected int computeMultiply (int number1, int number2) {
 
-        MultiplyComputer computeMultiply = new MultiplyComputer();
+        MultiplyComputation computeMultiply = new MultiplyComputation();
         return computeMultiply.compute(number1, number2);
     }
 
     protected int computeDivide (int number1, int number2) {
-        ComputeDivide computeDivide = new ComputeDivide();
-        return computeDivide(number1, number2);
+        DivideComputation divideComputation = new DivideComputation();
+        return divideComputation.compute(number1, number2);
     }
 
     private void compute (String operator) {
@@ -61,10 +60,10 @@ public class JavaFXApp extends Application {
                 result = computeMultiply (number1, number2);
                 break;
             case DIVIDE:
-                result = computeDivide ();
+                result = computeDivide(number1, number2);
                 break;
-            case SUBSTRACT:
-                result = computeSubstract(number1, number2);
+            case SUBTRACT:
+                result = 0;//computeSubtract(number1, number2);
                 break;
             default:
                 result = 0;
@@ -154,7 +153,8 @@ public class JavaFXApp extends Application {
         addButton (PLUS, 160, 10, 105);
         addButton (MULTIPLY, 160, 170, 105);
         addButton (DIVIDE, 160, 330, 105);
-        txtResult = addTextField ("Hier wordt het resultaat getoond...", false, 480, 10, 155);
+        addButton (SUBTRACT, 160, 490, 105);
+        txtResult = addTextField ("Hier wordt het resultaat getoond...", false, 500, 10, 150);
         txtResult.setEditable (false);
 
         /*
